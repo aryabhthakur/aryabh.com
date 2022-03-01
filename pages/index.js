@@ -32,7 +32,7 @@ export default function Home() {
                             <span className='mx-1 border p-1 rounded'><span className='bg-sky-800 text-white rounded px-1'>PHPUnit</span> - PHP</span> 
                         </li>
                         <li className="before:content-[''] before:w-5 before:border before:absolute before:-ml-6 before:mt-2 ml-6 mt-4">
-                            <p className='mb-3'>for <code className='border p-1 rounded mt-2 w-min'>["Database","Caching","ORM"]</code>  🤖 :</p>
+                            <p className='mb-3'>for <code className='border p-1 rounded mt-2 w-min'>[&#34;Database&#34;&#44;&#34;Caching&#34;&#44;&#34;	ORM&#34;]</code>  🤖 :</p>
                             <ul>
                                 <li className='mb-2'>
                                     <span className='mx-1 border px-1 rounded'>Database</span> : <span className='bg-green-500 text-white rounded px-1'>MongoDB</span> or <span className='bg-sky-700 text-white rounded px-1'>MariaDB(Mysql)</span>

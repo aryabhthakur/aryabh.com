@@ -313,7 +313,7 @@ const Projects = () => {
                     />
                     </div>
                     <div className='w-1/2'>
-                      <label htmlFor="classname" className='text-sm text-gray-400'>Enter Project's Github URL</label>
+                      <label htmlFor="classname" className='text-sm text-gray-400'>Enter Project Github URL</label>
                       <Input
                         id="classname"
                         type="text"
@@ -370,7 +370,7 @@ const Projects = () => {
                         />
                     </div>
                     <div className='w-full mt-3'>
-                      <label htmlFor="project_desc" className='text-sm text-gray-400'>Enter Project's Description</label>
+                      <label htmlFor="project_desc" className='text-sm text-gray-400'>Enter Project Description</label>
                       <textarea onChange={event => setProject_desc(event.target.value)}
                       value={project_desc}
                        className='box-border border w-full rounded-md mt-1 h-20 px-2 focus:outline-0 shadow-sm border-gray-300 focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50' id="">
@@ -415,7 +415,7 @@ const Projects = () => {
                     />
                     </div>
                     <div className='w-3/4 mt-3'>
-                      <label htmlFor="classname" className='text-sm text-gray-400'>Enter Project's Changelog URL</label>
+                      <label htmlFor="classname" className='text-sm text-gray-400'>Enter Project Changelog URL</label>
                       <Input
                         id="classname"
                         type="text"
