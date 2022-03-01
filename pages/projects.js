@@ -27,7 +27,6 @@ export default function projects() {
 
     return (<>
         <GuestLayout>
-            {menuLangs.map(mlan => {console.log(mlan);})}
         <div className='mb-2'>Here's some of <span className='underline font-bold text-xl ml-1'>My Projects</span></div>
             {project_list.length == 0 ? 'No Projects...' : project_list.map(project=>(
                 <div key={project.info.id} className={'w-full md:w-1/2 shadow-2xl shadow-gray-200 p-2 border-2 rounded-md'}>
