@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import {BsGithub, BsMoonStars, BsSunFill} from 'react-icons/bs'
 import {FcGlobe} from 'react-icons/fc'
-import ApplicationLogo from '@/components/ApplicationLogo'
+import ApplicationLogo from '../../components/ApplicationLogo'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect,useState } from 'react'
