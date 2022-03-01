@@ -86,7 +86,7 @@ const Frameworks = () => {
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
                   Frameworks
                 </h2>
-                <button onClick={()=>setIsOpen(true)} 
+                <button onClick={()=>{setIsOpen(true),setEditorMode('create')}} 
                 className='ml-auto flex items-center gap-1 bg-teal-400 px-2 py-1 text-white shadow-lg 
                 rounded shadow-teal-100 hover:shadow-none active:bg-teal-500 duration-150'>
                   <BiLayerPlus/> Add Framework</button>
@@ -187,7 +187,7 @@ const Frameworks = () => {
                         type="text"
                         value={framework_name}
                         className="border"
-                        onChange={event => setLname(event.target.value)}
+                        onChange={event => setFrameworkName(event.target.value)}
                         required
                         autoFocus
                         placeholder="Framework Name"
@@ -200,7 +200,7 @@ const Frameworks = () => {
                         type="text"
                         value={framework_classname}
                         className="border"
-                        onChange={event => setLcname(event.target.value)}
+                        onChange={event => setFrameworkClassname(event.target.value)}
                         required
                         autoFocus
                         placeholder="Framework Classname"

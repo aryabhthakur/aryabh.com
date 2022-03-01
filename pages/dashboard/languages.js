@@ -79,7 +79,7 @@ const Languages = () => {
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
                     Languages
                 </h2>
-                <button onClick={()=>setIsOpen(true)}
+                <button onClick={()=>{setIsOpen(true),setEditorMode('create')}}
                  className='ml-auto flex items-center gap-1 bg-blue-500 px-2 py-1 text-white shadow-lg 
                  rounded shadow-blue-100 hover:shadow-none active:bg-blue-400 duration-150'><BiCommentAdd/>Add Language</button>
             </div>
