@@ -11,8 +11,9 @@ Before you start, make changes to your **env file.** Add your fastapi server url
 ```
 NEXT_PUBLIC_BACKEND_URL  = your-fastapi-server
 ```
-First, run the development server:
-
+First, install all dependency: 
+``` npm install ```
+then 
 ```bash
 npm run dev
 # or
