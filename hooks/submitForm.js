@@ -1,4 +1,4 @@
-import axios from '@/lib/axios'
+import axios from '../lib/axios'
 export const submitFormCustom = async (editorMode,data,model,callback) => {
       var id = editorMode == 'create' ? '' : data.id
       var config = {

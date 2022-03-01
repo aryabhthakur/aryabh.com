@@ -1,8 +1,8 @@
-import AppLayout from '@/components/Layouts/AppLayout'
+import AppLayout from '../../components/Layouts/AppLayout'
 import Head from 'next/head'
-import { useAuth } from '@/hooks/auth'
-import {useState,useEffect,Fragment} from 'react'
-import Input from '@/components/Input'
+import { useAuth } from '../../hooks/auth'
+import {useState,Fragment} from 'react'
+import Input from '../../components/Input'
 import { Dialog, Transition } from '@headlessui/react'
 import {useSWRConfig} from 'swr'
 import {BiEditAlt} from 'react-icons/bi'
@@ -11,8 +11,8 @@ import {AiOutlineDelete} from 'react-icons/ai'
 import {HiOutlineRefresh} from 'react-icons/hi'
 import {MdOutlineClose} from 'react-icons/md'
 import { WithContext as ReactTags } from 'react-tag-input';
-import { getDataCustom } from '@/hooks/getData'
-import { submitFormCustom,delDataReq } from '@/hooks/submitForm'
+import { getDataCustom } from '../../hooks/getData'
+import { submitFormCustom,delDataReq } from '../../hooks/submitForm'
 
 const Projects = () => {
     const { mutate } = useSWRConfig()

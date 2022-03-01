@@ -1,5 +1,5 @@
 import useSWR,{useSWRConfig} from 'swr'
-import axios from '@/lib/axios'
+import axios from '../lib/axios'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import qs from 'qs'

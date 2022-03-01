@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { getDataCustom } from '@/hooks/getData'
+import { getDataCustom } from '../hooks/getData'
 import {useState,useEffect} from 'react'
-import {BsGithub, BsMoonStars, BsSunFill} from 'react-icons/bs'
-import GuestLayout from '@/components/Layouts/GuestLayout'
+import {BsGithub} from 'react-icons/bs'
+import GuestLayout from '../components/Layouts/GuestLayout'
 
 export default function projects() {
     // Get All Projects
@@ -26,6 +26,9 @@ export default function projects() {
       };
 
     return (<>
+            <Head>
+                <title>{process.env.NEXT_PUBLIC_APPLICATION_NAME} Projects</title>
+            </Head>
         <GuestLayout>
         <div className='mb-2'>Here's some of <span className='underline font-bold text-xl ml-1'>My Projects</span></div>
             {project_list.length == 0 ? 'No Projects...' : project_list.map(project=>(

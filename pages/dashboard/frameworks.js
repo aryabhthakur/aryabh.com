@@ -1,16 +1,16 @@
-import AppLayout from '@/components/Layouts/AppLayout'
+import AppLayout from '../../components/Layouts/AppLayout'
 import Head from 'next/head'
-import { useAuth } from '@/hooks/auth'
+import { useAuth } from '../../hooks/auth'
 import {useState,Fragment} from 'react'
-import Input from '@/components/Input'
+import Input from '../../components/Input'
 import { Dialog, Transition,Listbox } from '@headlessui/react'
 import {useSWRConfig} from 'swr'
 import {BiEditAlt,BiLayerPlus} from 'react-icons/bi'
 import {AiOutlineDelete,AiFillCheckCircle} from 'react-icons/ai'
 import {HiSelector,HiOutlineRefresh} from 'react-icons/hi'
 import {MdOutlineClose} from 'react-icons/md'
-import { getDataCustom } from '@/hooks/getData'
-import { submitFormCustom,delDataReq } from '@/hooks/submitForm'
+import { getDataCustom } from '../../hooks/getData'
+import { submitFormCustom,delDataReq } from '../../hooks/submitForm'
 
 const Frameworks = () => {
     const { mutate } = useSWRConfig()

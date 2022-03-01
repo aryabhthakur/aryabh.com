@@ -1,5 +1,5 @@
-import axios from '@/lib/axios'
-import { parseJwt } from '@/lib/jwtParser'
+import axios from '../lib/axios'
+import { parseJwt } from '../lib/jwtParser'
 import useSWR from 'swr'
 export const getDataCustom = async (swrkey,model,callback,rawData = false,offset,newlimit) => {
  const {data,error}  = useSWR(swrkey, () =>

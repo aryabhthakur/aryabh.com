@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import GuestLayout from '@/components/Layouts/GuestLayout'
+import GuestLayout from '../components/Layouts/GuestLayout'
 export default function Home() {
     return (
         <>
