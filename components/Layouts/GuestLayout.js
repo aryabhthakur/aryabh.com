@@ -16,7 +16,7 @@ const GuestLayout = ({ children }) => {
                 <title>{process.env.NEXT_PUBLIC_APPLICATION_NAME} site</title>
             </Head>
             <div className="container mx-auto dark:bg-slate-900">
-                <div className="flex sticky top-0 md:top-5 shadow-lg dark:shadow-2xl dark:shadow-slate-700 p-4 bg-white dark:bg-slate-800 z-50 md:rounded-lg border">
+                <div className="flex sticky top-0 xl:top-5 shadow-lg dark:shadow-2xl dark:shadow-slate-700 p-4 bg-white dark:bg-slate-800 z-50 xl:rounded-lg border">
                     <div className="mr-auto">
                         <Link href="/">
                             <button  className='mr-2 py-1 px-2 shadow dark:hover:shadow hover:shadow-lg hover:shadow-orange-200 hover:bg-orange-300 dark:hover:text-slate-900 dark:active:text-white active:bg-orange-500 active:text-white duration-200 hover:rounded hover:border-transparent dark:border-blue-500 dark:hover:border-transparent border-b-2'>About Me</button>
@@ -35,8 +35,8 @@ const GuestLayout = ({ children }) => {
                         <button onClick={() => window.open('https://github.com/aryabhthakur/')} className='p-2 text-white bg-purple-700 shadow-lg dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-purple-600 shadow-purple-400 active:shadow-inner active:bg-purple-500 rounded-2xl duration-200 hover:shadow-purple-200'><BsGithub/></button>
                     </div>
                 </div>
-                <div className="flex items-center h-[90vh] flex-col md:flex-row p-4">
-                    <div className="w-full md:w-1/2 order-2 md:order-1 pb-8 md:pb-0">
+                <div className="flex items-center h-[90vh] flex-col md:flex-row p-4 xl:mt-0 lg:mt-12 md:mt-24">
+                    <div className="w-full md:w-1/2 order-2 md:order-1 pb-8 xl:pb-0">
                         {children}
                     </div>
                     <div className="w-full md:w-1/2 flex items-center flex-col order-1 md:order-2 mb-8 md:mb-0">
