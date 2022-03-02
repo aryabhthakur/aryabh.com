@@ -87,8 +87,9 @@ const Projects = () => {
         elang.forEach(lang=>{
           setLanguagesTags([...language_tags, lang])
         })
+
         const efang = []
-        project.related_languages.map(framework=>{
+        project.related_frameworks.map(framework=>{
           var fdata = {
             rel_id:framework.relation_id,
             id: String(framework.id),
@@ -98,7 +99,7 @@ const Projects = () => {
           efang.push(fdata)
         })
         efang.forEach(framework=>{
-          setLanguagesTags([...framework_tags, framework])
+          setFrameworksTags([...framework_tags, framework])
         })
         setEditorMode('update')
     }
@@ -117,10 +118,10 @@ const Projects = () => {
 
 
       const languages_tags_handleDelete = i => {
-        setLanguagesTags(language_tags.filter((tag, index) => index !== i));
         if (editorMode == 'update') {
           if (confirm("You sure you want to remove "+language_tags.at(i).text+" from "+project_name+"'s Relation?") == true) {
             delDataReq('delete',language_tags.at(i).rel_id,'relations',console.log)
+            setLanguagesTags(language_tags.filter((tag, index) => index !== i));
           }
         }
       };
@@ -164,10 +165,10 @@ const Projects = () => {
         }
       };
       const frameworks_tags_handleDelete = i => {
-        setFrameworksTags(framework_tags.filter((tag, index) => index !== i));
         if (editorMode == 'update') {
-          if (confirm("You sure you want to remove "+tag.text+" from "+project_name+"'s Relation?") == true) {
+          if (confirm("You sure you want to remove "+framework_tags.at(i).text+" from "+project_name+"'s Relation?") == true) {
             delDataReq('delete',framework_tags.at(i).rel_id,'relations',console.log)
+            setFrameworksTags(framework_tags.filter((tag, index) => index !== i));
           }
         }
       };
@@ -202,6 +203,8 @@ const Projects = () => {
         setProject_package_manager_url('')
         setFrameworksTags([])
         setLanguagesTags([])
+        setProject_version('')
+        setProject_changelog('')
       }, 1000);
       setEditorMode('')
       mutate('get_projects')
@@ -385,7 +388,7 @@ const Projects = () => {
                         <option value="1">Pypi</option>
                         <option value="2">Packagist</option>
                         <option value="3">Crates</option>
-                        <option value="3">Crates</option>
+                        <option value="4">Github</option>
                     </select>
                     </div>
                     <div className='w-1/2 mt-3'>
@@ -405,7 +408,7 @@ const Projects = () => {
                     <label htmlFor="framework" className='text-sm text-gray-400'>Current Version</label>
                       <Input
                         id="framework"
-                        type="text"
+                        type="number"
                         value={project_version}
                         className="border w-full"
                         onChange={event => setProject_version(event.target.value)}

@@ -8,7 +8,7 @@ import { useAuth } from '../../hooks/auth'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useTheme } from 'next-themes'
-import {BsGithub, BsMoonStars, BsSunFill} from 'react-icons/bs'
+import {BsMoonStars, BsSunFill} from 'react-icons/bs'
 
 const Navigation = ({ user }) => {
     const router = useRouter()

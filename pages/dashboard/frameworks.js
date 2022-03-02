@@ -64,7 +64,7 @@ const Frameworks = () => {
       'id': framework_id,
       'text': framework_name,
       'classname': framework_classname,
-      'main_language': framework_main_lang.id,
+      'main_language': framework_main_lang?.id,
       'author_id': user?.id
     }
 
@@ -211,7 +211,7 @@ const Frameworks = () => {
                     <Listbox value={framework_main_lang} onChange={setFrameworkMainLang}>
                       <div className="relative">
                         <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white border rounded-lg shadow cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
-                          <span className="block truncate">{framework_main_lang.text}</span>
+                          <span className="block truncate">{framework_main_lang?.text}</span>
                           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                             <HiSelector className="w-5 h-5 text-gray-400" aria-hidden="true"/>
                           </span>

@@ -1,11 +1,14 @@
 import Head from 'next/head'
 import {BsGithub, BsMoonStars, BsSunFill} from 'react-icons/bs'
-import {FcGlobe} from 'react-icons/fc'
+import {FcGlobe,FcFolder,FcAbout} from 'react-icons/fc'
 import ApplicationLogo from '../../components/ApplicationLogo'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { useEffect,useState } from 'react'
+import { useRouter } from 'next/router'
+
 const GuestLayout = ({ children }) => {
+    const router = useRouter()
     const [mounted, setMounted] = useState(false)
     const { theme, setTheme } = useTheme()
     useEffect(() => setMounted(true), [])
@@ -17,15 +20,15 @@ const GuestLayout = ({ children }) => {
             </Head>
             <div className="container mx-auto dark:bg-slate-900">
                 <div className="flex sticky top-0 xl:top-5 shadow-lg dark:shadow-2xl dark:shadow-slate-700 p-4 bg-white dark:bg-slate-800 z-50 xl:rounded-lg border">
-                    <div className="mr-auto">
+                    <div className="mr-auto flex gap-2">
                         <Link href="/">
-                            <button  className='mr-2 py-1 px-2 shadow dark:hover:shadow hover:shadow-lg hover:shadow-orange-200 hover:bg-orange-300 dark:hover:text-slate-900 dark:active:text-white active:bg-orange-500 active:text-white duration-200 hover:rounded hover:border-transparent dark:border-blue-500 dark:hover:border-transparent border-b-2'>About Me</button>
+                            <a className={'py-1 px-2 shadow dark:hover:shadow hover:shadow-lg hover:shadow-orange-200 hover:bg-orange-300 dark:hover:text-slate-900 dark:active:text-white active:bg-orange-500 active:text-white duration-200 hover:rounded hover:border-transparent dark:border-blue-500 dark:hover:border-transparent border-b-2 flex w-[fit-content] items-center gap-1'}><FcAbout/>About Me</a>
                         </Link>
                         <Link href="/projects">
-                            <button  className='mr-2 py-1 px-2 shadow dark:hover:shadow hover:shadow-lg hover:shadow-emerald-200 hover:bg-emerald-300 dark:hover:text-slate-900 dark:active:text-white active:bg-emerald-500 active:text-white duration-200 hover:rounded hover:border-transparent dark:border-blue-500 dark:hover:border-transparent border-b-2'>Projects</button>
+                            <a className={'py-1 px-2 shadow dark:hover:shadow hover:shadow-lg hover:shadow-orange-200 hover:bg-orange-300 dark:hover:text-slate-900 dark:active:text-white active:bg-orange-500 active:text-white duration-200 hover:rounded hover:border-transparent dark:border-blue-500 dark:hover:border-transparent border-b-2 flex w-[fit-content] items-center gap-1'}><FcFolder/>Projects</a>
                         </Link>
-                        <Link href="/articles">
-                            <button  className='mr-2 py-1 px-2 hidden md:inline duration-200 rounded dark:border-transparent border-b-2' disabled>Articles -Coming Soon!</button>
+                        <Link href="">
+                            <a  className='mr-2 py-1 px-2 hidden md:inline duration-200 rounded dark:border-transparent border-b-2' disabled>Articles -Coming Soon!</a>
                         </Link>
                     </div>
                     <div className="ml-auto flex items-center gap-2">
