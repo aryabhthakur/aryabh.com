@@ -199,6 +199,7 @@ const Projects = () => {
         setProject_desc('')
         setProject_github_url('')
         setProject_created_on('')
+        setProject_last_update_on('')
         setProject_package_manager('')
         setProject_package_manager_url('')
         setFrameworksTags([])

@@ -16,6 +16,7 @@ const GuestLayout = ({ children }) => {
     return (
         <div>
             <Head>
+                <link rel="prefetch" href="gg_logo.png"/>
                 <title>{process.env.NEXT_PUBLIC_APPLICATION_NAME} site</title>
             </Head>
             <div className="container mx-auto dark:bg-slate-900">
