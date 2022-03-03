@@ -5,9 +5,14 @@ import {BsGithub} from 'react-icons/bs'
 import GuestLayout from '../components/Layouts/GuestLayout'
 import { mutate } from 'swr'
 
-export async function getServerSideProps() {
-    const res = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL+'projects/?limit='+process.env.NEXT_PUBLIC_PAGINATION_LIMIT+'&offset=0&author='+process.env.NEXT_PUBLIC_COMMON_USER_ID)
-    const data = await res.json()
+export async function getServerSideProps({req, res}) {
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+      )
+    
+    const resp = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL+'projects/?limit='+process.env.NEXT_PUBLIC_PAGINATION_LIMIT+'&offset=0&author='+process.env.NEXT_PUBLIC_COMMON_USER_ID)
+    const data = await resp.json()
     if (!data) {
       return {
         notFound: true,
