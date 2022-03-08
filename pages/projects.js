@@ -3,59 +3,41 @@ import { getDataCustom } from '../hooks/getData'
 import {useState,useEffect,useCallback} from 'react'
 import {BsGithub} from 'react-icons/bs'
 import GuestLayout from '../components/Layouts/GuestLayout'
+import useSWR from 'swr'
 import { mutate } from 'swr'
-
-export async function getServerSideProps({req, res}) {
-    res.setHeader(
-        'Cache-Control',
-        'public, s-maxage=10, stale-while-revalidate=59'
-      )
-    
-    const resp = await fetch(process.env.NEXT_PUBLIC_BACKEND_URL+'projects/?limit='+process.env.NEXT_PUBLIC_PAGINATION_LIMIT+'&offset=0&author='+process.env.NEXT_PUBLIC_COMMON_USER_ID)
-    const data = await resp.json()
-    if (!data) {
-      return {
-        notFound: true,
-      }
-    }
-    return {
-      props: { data },
-    }
-  }
-
+import axios from '../lib/axios'
+import {ImSpinner3} from 'react-icons/im'
 export default function projects({ data }) {
     // Get All Projects
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    let [project_list, setapiDataProjects] = useState([data.list])
-    // const menuItems = [...new Set(project_list.map(c => c.related_languages))]
+    let [project_list, setapiDataProjects] = useState([])
+    getDataCustom('get_projects','projects',setapiDataProjects,true)
     return (<>
             <Head>
                 <title>{process.env.NEXT_PUBLIC_APPLICATION_NAME} Projects</title>
             </Head>
         <GuestLayout>
         <div className='mb-2'>Here&#39;s some of <span className='underline font-bold text-xl ml-1'>My Projects</span></div>
-            {project_list.length == 0 ? 'No Projects...' : project_list.map(projects=>(
-                projects.map(project =>(
-                    <div key={project.info.id} className={'w-full lg:w-1/2 shadow-2xl shadow-gray-200 p-2 border-2 rounded-md mb-4 z-50'}>
-                    <div className='flex'>
-                        <div className='mr-auto'>{project.info.name}</div>
-                        <div className="ml-auto"><a href={project.info.github_url} className="flex items-center gap-1 border px-1 rounded-lg hover:bg-neutral-800 hover:text-white hover:border-black duration-200 hover:shadow-lg hover:shadow-gray-300 active:shadow-inner" target="_blank" rel="noopener noreferrer"><BsGithub/>Repo</a></div>
-                    </div>
-                    <div className='text-gray-400 mb-2'>{project.info.desc}</div>
-                    <div className="flex gap-2">
-                    {project.related_languages.length == 0 ? '' : <>
-                    {project.related_languages.map(rel_lang =>(
-                        <div key={rel_lang.id} className="text-sm px-2 rounded-lg border shadow-sm">{rel_lang.text}</div>
+            {project_list.length == 0 ? <><div className="mt-2 flex items-center gap-2"><ImSpinner3 className='animate-spin' />Loading Projects...</div></> : project_list.map(project=>(
+                <div key={project.info.id} className={'w-full lg:w-1/2 shadow-2xl shadow-gray-200 p-2 border-2 rounded-md mb-4 z-50'}>
+                <div className='flex'>
+                    <div className='mr-auto'>{project.info.name}</div>
+                    <div className="ml-auto"><a href={project.info.github_url} className="flex items-center gap-1 border px-1 rounded-lg hover:bg-neutral-800 hover:text-white hover:border-black duration-200 hover:shadow-lg hover:shadow-gray-300 active:shadow-inner" target="_blank" rel="noopener noreferrer"><BsGithub/>Repo</a></div>
+                </div>
+                <div className='text-gray-400 mb-2'>{project.info.desc}</div>
+                <div className="flex gap-2">
+                {project.related_languages.length == 0 ? '' : <>
+                {project.related_languages.map(rel_lang =>(
+                    <div key={rel_lang.id} className="text-sm px-2 rounded-lg border shadow-sm">{rel_lang.text}</div>
+                ))}
+                    </>}
+                {project.related_frameworks.length == 0 ? '' : <>
+                    {project.related_frameworks.map(rel_framework =>(
+                        <div key={rel_framework.id} className='text-sm px-2 rounded-lg border shadow-sm"'>{rel_framework.text}</div>
                     ))}
                         </>}
-                    {project.related_frameworks.length == 0 ? '' : <>
-                        {project.related_frameworks.map(rel_framework =>(
-                            <div key={rel_framework.id} className='text-sm px-2 rounded-lg border shadow-sm"'>{rel_framework.text}</div>
-                        ))}
-                            </>}
-                    </div>
                 </div>
-                ))
+            </div>
                 ))}
         </GuestLayout>  
     </>)
