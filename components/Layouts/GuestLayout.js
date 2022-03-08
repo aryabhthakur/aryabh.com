@@ -18,6 +18,20 @@ const GuestLayout = ({ children }) => {
             <Head>
                 <link rel="prefetch" href="gg_logo.png"/>
                 <title>{process.env.NEXT_PUBLIC_APPLICATION_NAME} site</title>
+                <meta name="title" content="Aryabh's site" />
+                <meta name="description" content="This is my (Aryabh's) personal site & portfolio of this things I worked over the years." />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.aryabh.com/" />
+                <meta property="og:title" content="Aryabh's site"/>
+                <meta property="og:description" content="This is my (Aryabh's) personal site & portfolio of this things I worked over the years." />
+                <meta property="og:image" content="" />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://www.aryabh.com/" />
+                <meta property="twitter:title" content="Aryabh's site">
+                <meta property="twitter:description" content="This is my (Aryabh's) personal site & portfolio of this things I worked over the years." />
+                <meta property="twitter:image" content="" /></meta>
             </Head>
             <div className="container mx-auto dark:bg-slate-900">
                 <div className="flex sticky top-0 xl:top-5 shadow-lg dark:shadow-2xl dark:shadow-slate-700 p-4 bg-white dark:bg-slate-800 z-50 xl:rounded-lg border">
