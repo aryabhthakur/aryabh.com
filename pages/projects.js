@@ -1,13 +1,10 @@
 import Head from 'next/head'
 import { getDataCustom } from '../hooks/getData'
-import {useState,useEffect,useCallback} from 'react'
+import {useState} from 'react'
 import {BsGithub} from 'react-icons/bs'
 import GuestLayout from '../components/Layouts/GuestLayout'
-import useSWR from 'swr'
-import { mutate } from 'swr'
-import axios from '../lib/axios'
 import {ImSpinner3} from 'react-icons/im'
-export default function projects({ data }) {
+export default function projects() {
     // Get All Projects
     // eslint-disable-next-line react-hooks/rules-of-hooks
     let [project_list, setapiDataProjects] = useState([])
