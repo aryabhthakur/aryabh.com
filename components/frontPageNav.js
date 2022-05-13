@@ -6,6 +6,12 @@ import { MdArticle } from "react-icons/md"
 export const FrontPageNav = () =>{
     const router = useRouter();
     return(<>
+    {router.pathname == "/projects" ? 
+    <div className="absolute bottom-[5.875rem] w-full flex items-center justify-center z-50">
+        <div className="px-4 shadow-xl pt-2 pb-4 rounded-2xl flex items-center justify-center border w-fit">
+        <span className="text-sm bg-gray-200 mx-2 rounded-lg px-2">Project List</span> - Powered by <a target="blank" href="https://docs.github.com/en/rest/repos" className="bg-slate-700 hover:shadow-lg duration-100 hover:scale-110 text-white px-1 text-sm mx-2 rounded-lg">Github</a> API
+        </div>
+        </div> :<></>}
             <div className="flex absolute bottom-10 justify-center w-full p-4 items-center z-50">
                 <div className="bg-white flex items-center gap-4 shadow-lg py-2 px-4 rounded-2xl border">
                     <Link href="/">
