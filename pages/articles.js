@@ -1,6 +1,6 @@
 import { DefaultLayout } from "../components/Layouts/DefaultLayout"
-export default function Projects() {
+export default function Articles() {
     return (<><DefaultLayout>
-        Projects
+        Articles
         </DefaultLayout></>)
 }

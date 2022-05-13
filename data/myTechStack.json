@@ -1,0 +1,116 @@
+{
+    "Languages, I mostly use or know.": {
+        "Python":{
+            "link":"https://google.com"
+        },
+        "Javascript":{
+            "link":"https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        "PHP":{
+            "link":"https://www.php.net/"
+        }
+    },
+    "Databases, I mostly use.": {
+        "MongoDB":{
+            "link":"https://www.mongodb.com/",
+            "desc":"Document Oriented Database"
+        },
+        "MysqlDB":{
+            "link":"https://www.mysql.com/",
+            "desc":"Object-Relational Database"
+        },
+       "Redis": {
+            "link":"https://redis.io/",
+            "desc":"Key-Value Database"
+        }
+    },
+    "Packages, I like to use most in Backend.": {
+        "SqlAlchemy":{
+            "language":"Python",
+            "desc":"ORM for SQL Dbs",
+            "link":"https://www.sqlalchemy.org/"
+        },
+        "ItsDangerous":{
+            "language":"Python",
+            "desc":"Data encryption & decryption",
+            "link":""
+        },
+        "Odmantic":{
+            "language":"Python",
+            "desc": "Pydantic & Motor based ODM",
+            "link":""
+        },
+        "Pydantic":{
+            "language":"Python",
+            "desc":"Schema Validation",
+            "link":""
+        },
+        "Motor (MongoDB)":{
+            "language":"Python",
+            "desc":"Python MongoDB driver with async",
+            "link":""
+        },
+        "Dramatiq":{
+            "language":"Python",
+            "desc":"Task Queing with Redis or RabbitMQ",
+            "link":""
+        }
+    },
+    "Frontend, Frameworks I use & know.": {
+        "ReactJS":{
+            "type":"framework",
+            "platform":"js",
+            "language":"Javascript",
+            "link":""
+        },
+        "Next.js":{
+            "type":"framework",
+            "platform":"reactJS",
+            "language":"Javascript",
+            "link":""
+        }
+    },
+    "Backend, Frameworks & CMS I have used.":{
+        "FastAPI":{
+            "type":"API Framework",
+            "language":"Python",
+            "link":""
+        },
+        "Flask":{
+            "type":"API Framework",
+            "language":"Python",
+            "link":""
+        },
+        "Starlette":{
+            "type":"API Framework",
+            "language":"Python",
+            "link":""
+        },
+       "ExpressJS":{
+        "type":"API Framework",
+        "language":"Javascript",
+            "link":""
+        },
+        "Fastify":{
+            "type":"API Framework",
+            "language":"Javascript",
+            "link":""
+        },
+        "Laravel":{
+            "type":"Full-Stack Framework",
+            "platform":"full",
+            "language":"PHP",
+            "link":""
+        },
+        "Codeigniter":{
+            "type":"Full-Stack Framework",
+            "language":"PHP",
+            "link":""
+        },
+        "Wordpress":{
+            "type":"CMS",
+            "language":"PHP",
+            "link":""
+        }
+    }
+}
