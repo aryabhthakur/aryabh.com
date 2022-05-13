@@ -26,13 +26,7 @@ export default function Home(){
                 <title>{process.env.NEXT_PUBLIC_APPLICATION_NAME} site</title>
             </Head>
         <DefaultLayout>
-        <div className='container mx-auto -z-10 absolute w-full h-full'>
-            <div className="h-10 w-14">Python</div>
-        </div>
-        <div className="container mx-auto dark:bg-slate-900">
-                <div className="flex items-center justify-center h-screen w-full flex-col p-4 xl:mt-0 lg:mt-12 md:mt-24">
-                    <div className="flex flex-row items-center gap-5 justify-center">
-                        {showTechStack ? 
+        {showTechStack ? 
                         <>
                         <motion.main
                         variants={variants} // Pass the variant object into Framer Motion 
@@ -101,9 +95,6 @@ export default function Home(){
                             <Link href={'/articles'} passHref><button>Things I wrote</button></Link>
                         </div>
                         </div>
-                    </div>
-                </div>
-            </div>
         </DefaultLayout>
         </>
     )

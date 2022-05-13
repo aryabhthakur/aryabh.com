@@ -16,7 +16,14 @@ export const  DefaultLayout = ({children}) =>{
     transition={{ type: 'linear' }} // Set the transition to linear
     className=""
     >
-    {children}
+            <div className="container lg:max-w-3xl mx-auto dark:bg-slate-900">
+                <div className="flex items-center justify-center h-screen w-full flex-col p-4 xl:mt-0 lg:mt-12 md:mt-24">
+                    <div className="flex md:flex-row flex-col items-center gap-5 justify-center">
+                    {children}
+                    </div>
+                </div>
+            </div>
+    
     </motion.main>
     </>)
 }
