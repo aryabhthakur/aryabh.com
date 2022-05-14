@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { DefaultLayout } from "../components/Layouts/DefaultLayout"
 import {FaEye, FaGithub} from "react-icons/fa"
 import Link from "next/link";
