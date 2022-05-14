@@ -90,7 +90,7 @@ export default function Projects(props) {
         </DefaultLayout></>)
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
     const personalRepores = await fetch(`https://api.github.com/users/aryabhthakur/repos`)
     const personalRepodata = await personalRepores.json()
     const coinPascalRepores = await fetch(`https://api.github.com/orgs/coinpascal/repos`)
