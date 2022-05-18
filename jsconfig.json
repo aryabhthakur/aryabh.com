@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/components/*": ["components/*"],
+        "@/data/*": ["data/*"],
+        "contentlayer/generated": ["./.contentlayer/generated"]
+      }
+    },
+    "include": ["**/**/*.js","**/*.js", "**/*.js", ".contentlayer/generated"]
+  }
