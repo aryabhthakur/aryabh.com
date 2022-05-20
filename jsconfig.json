@@ -7,5 +7,5 @@
         "contentlayer/generated": ["./.contentlayer/generated"]
       }
     },
-    "include": ["**/**/*.js","**/*.js", "**/*.js", ".contentlayer/generated"]
+    "include": ["**/**/*.js","**/**/**/*.js","**/*.js", "**/*.js", ".contentlayer/generated"]
   }

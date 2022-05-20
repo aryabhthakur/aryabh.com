@@ -10,7 +10,6 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
-
 export async function getStaticProps({ params }) {
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
   return {
