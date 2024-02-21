@@ -1,0 +1,13 @@
+{
+  "order": 1,
+  "title": "SSH.Studio",
+  "description":
+    "SSH.Studio is a software development studio for those who want robust yet intuitive approach for their project.",
+  "image": "/ssh-studio.png",
+  "url": "https://ssh.studio",
+  "urlTxt": "Go to SSH.studio",
+  "github": "https://github.com/ssh-studio/official-site",
+  "languages": ["Javascript", "Typescript"],
+  "frameworks": ["React","Next.js","TailwindCSS"],
+  "tools": ["Typescript", "Airtable","Zapier"]
+}

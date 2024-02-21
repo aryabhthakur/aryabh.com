@@ -1,31 +1,42 @@
-## Getting Started
-Before you start, make changes to your **env file.**
+# Content v2 Minimal Starter
+
+Look at the [Content documentation](https://content.nuxt.com/) to learn more.
+
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# yarn
+yarn install
+
+# npm
+npm install
+
+# pnpm
+pnpm install
 ```
-NEXT_PUBLIC_APPLICATION_NAME  = your-sitename
-```
-First, install all dependency: 
-``` npm install ```
-then 
+
+## Development Server
+
+Start the development server on http://localhost:3000
+
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Here's folder structure :
-|Folder / File | Description  |
-|--|--|
-| Components/* | Contains all react components & layouts 
-| lib/* | Contains some small but commonly used functions as libs
-| hooks/* | Contains Auth, Formsubmit & getdata like custom hooks
-| pages/* | Contains pages
+## Production
 
+Build the application for production:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Locally preview production build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run preview
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

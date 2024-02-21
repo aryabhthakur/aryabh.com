@@ -1,0 +1,10 @@
+{
+    "name":"pysolscan",
+    "description": "",
+    "githubUrl": "https://github.com/aryabhthakur/pysolscan",
+    "packageUrl": "https://pypi.org/project/pysolscan/",
+    "packageRepository": "PiPy",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/aryabhthakur/pysolscan/blob/master/LICENSE",
+    "licenseText": "MIT License"
+}
