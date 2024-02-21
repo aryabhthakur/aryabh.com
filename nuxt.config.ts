@@ -1,5 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  sitemap: {
+    enabled: true
+  },
+  schemaOrg: {
+    enabled: true
+  },
+  ogImage: {
+    enabled: true
+  },
+  seo: {
+    fallbackTitle: true
+  },
+  app: {
+    head: {
+      titleTemplate: '%s %separator %siteName',
+      templateParams: {
+        separator: '-'
+      }
+    }
+  },
+  site: {
+    url: 'https://aryabh.com',
+    name: 'Aryabh',
+    description: 'Hi, I am Aryabh. Welcome to my portfolio / blog / showcase site.',
+  },
   devtools: { enabled: false },
   runtimeConfig: {
     public: {
@@ -8,7 +33,7 @@ export default defineNuxtConfig({
       DRIBBBLE_URL: process.env.DRIBBBLE_URL,
     },
   },
-  modules: ['@nuxt/content', '@nuxtjs/google-fonts', "@nuxt/image","@vueuse/motion/nuxt","nuxt-icon"],
+  modules: ['@nuxt/content', '@nuxtjs/google-fonts', "@nuxt/image","@vueuse/motion/nuxt","nuxt-icon","@nuxtjs/seo"],
   css: ['~/assets/css/main.css'],
   googleFonts:{
     preconnect: true,
@@ -39,6 +64,7 @@ export default defineNuxtConfig({
     },
   },
   content:{
+    documentDriven: true,
     sources:{
       content: {
         driver: 'fs',
