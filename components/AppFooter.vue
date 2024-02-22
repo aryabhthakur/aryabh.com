@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-const githubUrl = process.env.GITHUB_URL;
-const twitterUrl = process.env.TWITTER_URL;
-const dribbbleUrl = process.env.DRIBBBLE_URL;
 type MenuItem = {
   name: string;
   url: string;
@@ -20,12 +17,26 @@ const Menus: MenuItem[] = [
     url: "/designs",
   },
 ];
+const NavMenus: MenuItem[] = [
+  {
+    name: "home",
+    url: "/",
+  },
+  {
+    name: "about",
+    url: "/about",
+  },
+  {
+    name: "articles",
+    url: "/articles",
+  },
+];
 </script>
 
 <template>
   <footer class="min-h-96 flex flex-col relative">
     <div
-      class="grid xl:max-w-7xl mx-auto gap-8 mt-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:px-0 px-4 py-5 relative z-10"
+      class="grid xl:max-w-7xl mx-auto gap-8 mt-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:px-0 px-4 py-5 relative z-10"
     >
       <div class="col-span-1">
         <h3
@@ -38,27 +49,33 @@ const Menus: MenuItem[] = [
           developing clean & intuitive UIs.
         </p>
         <div class="flex gap-3 mt-5 items-center">
-          <a
+          <NuxtLink
+            v-if="$config.public.GITHUB_URL"
             target="_blank"
-            :href="githubUrl"
-            class="p-2 duration-300 cursor-pointer rounded-full border border-gray-500/20 hover:bg-white/10"
+            :href="$config.public.GITHUB_URL"
           >
-            <Icon name="mdi:github" size="1.75em" />
-          </a>
-          <a
+            <IconButton>
+              <Icon name="mdi:github" size="1.75em" />
+            </IconButton>
+          </NuxtLink>
+          <NuxtLink
+            v-if="$config.public.TWITTER_URL"
             target="_blank"
-            :href="twitterUrl"
-            class="p-2 duration-300 cursor-pointer rounded-full border border-gray-500/20 hover:bg-white/10"
+            :href="$config.public.TWITTER_URL"
           >
-            <Icon name="logos:twitter" size="1.75em" />
-          </a>
-          <a
+            <IconButton>
+              <Icon name="logos:twitter" size="1.75em" />
+            </IconButton>
+          </NuxtLink>
+          <NuxtLink
+            v-if="$config.public.DRIBBBLE_URL"
             target="_blank"
-            :href="dribbbleUrl"
-            class="p-2 duration-300 cursor-pointer rounded-full border border-gray-500/20 hover:bg-white/10"
+            :href="$config.public.DRIBBBLE_URL"
           >
-            <Icon name="logos:dribbble-icon" size="1.75em" />
-          </a>
+            <IconButton>
+              <Icon name="logos:dribbble-icon" size="1.75em" />
+            </IconButton>
+          </NuxtLink>
         </div>
       </div>
       <div class="col-span-1">
@@ -81,7 +98,13 @@ const Menus: MenuItem[] = [
         >
           Navigation
         </h3>
-        _
+        <ul class="flex flex-col gap-2 justify-start">
+          <li v-for="menu in NavMenus" :key="menu.name">
+            <router-link active-class="underline" :to="menu.url">{{
+              menu.name
+            }}</router-link>
+          </li>
+        </ul>
       </div>
       <div class="col-span-1">
         <h3
@@ -89,7 +112,22 @@ const Menus: MenuItem[] = [
         >
           Recent Articles
         </h3>
-        _
+        <ContentList path="/article">
+          <template #default="{ list }">
+            <div v-for="article in list" :key="article.title">
+              <NuxtLink :to="article._path">
+                <h2
+                  class="text-lg font-semibold mb-2 hover:border-white border-b-2 border-transparent w-fit duration-300"
+                >
+                  {{ article.title }}
+                </h2>
+              </NuxtLink>
+            </div>
+          </template>
+          <template #not-found>
+            <p>No articles yet!.</p>
+          </template>
+        </ContentList>
       </div>
     </div>
     <div class="border-t border-gray-500/50 py-4 relative z-10">
@@ -97,6 +135,13 @@ const Menus: MenuItem[] = [
         <p class="text-sm font-semibold text-gray-500 mr-auto">
           Copyright © 2024, Aryabh
         </p>
+        <NuxtLink
+          to="https://github.com/aryabhthakur/aryabh.com"
+          target="_blank"
+          class="text-sm font-semibold text-gray-500 hover:text-white duration-300 ml-auto"
+        >
+          This site source code is available on GitHub
+        </NuxtLink>
       </div>
     </div>
     <div class="w-full h-full absolute top-0 left-0 -z-0">

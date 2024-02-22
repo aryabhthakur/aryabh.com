@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.17",
     "nuxt-icon": "^0.6.8",
+    "nuxt-schema-org": "^3.3.4",
     "nuxt-site-config": "^2.2.9",
     "nuxt-site-config-kit": "^2.2.9",
     "postcss": "^8.4.35",

@@ -1,5 +1,3 @@
-<script setup lang="ts">
-</script>
 <template>
   <section
     class="py-32 md:py-64 px-5 md:px-20 xl:px-0 min-h-screen relative w-full"
@@ -24,11 +22,11 @@
         <ContentList path="/article">
           <template #default="{ list }">
             <div
-              v-for="(article, i) in list"
+              v-for="article in list"
               :key="article.title"
               class="rounded-xl p-4 border-gray-500/50 border-2"
             >
-              <div v-if="i < 1">
+              <div>
                 <div class="relative">
                   <NuxtImg
                     loading="lazy"

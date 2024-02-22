@@ -4,7 +4,17 @@ export default defineNuxtConfig({
     enabled: true
   },
   schemaOrg: {
-    enabled: true
+    enabled: true,
+    name: 'Aryabh',
+    identity: 'Person',
+    image: '/aaafd1f5-7b36-4f98-b2c6-b6784a0df7b3.webp',
+    description: 'Aryabh Thakur, is a full stack developer and owner of SSH.Studio, the software development studio behind Unoversion.comm, Hyperwafer.com, Techonscroll.com and many more projects.',
+    sameAs: [
+      'https://github.com/aryabhthakur',
+      'https://twitter.com/_aryabh',
+      'https://dribbble.com/_aryabh'
+    ],
+    url: 'https://aryabh.com'
   },
   ogImage: {
     enabled: true

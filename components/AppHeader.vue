@@ -53,14 +53,14 @@ onMounted(() => {
     :data-mobileopen="mobileOpenmenu.isOpen"
     ref="headerElement"
     data-onscroll="false"
-    class="h-20 z-50 fixed w-full data-[mobileopen=true]:border-gray-500/50 data-[mobileopen=true]:backdrop-blur-md data-[mobileopen=true]:bg-[#141726]/50 data-[onscroll=true]:bg-[#141726]/50 data-[onscroll=true]:backdrop-blur-md data-[onscroll=true]:border-gray-500/50 border-b-2 border-transparent duration-200 px-4 xl:px-0"
+    class="h-20 z-50 fixed w-full data-[mobileopen=true]:border-gray-500/50 data-[mobileopen=true]:backdrop-blur-md data-[mobileopen=true]:bg-[#141726]/50 data-[onscroll=true]:bg-[#141726]/50 data-[onscroll=true]:backdrop-blur-md data-[onscroll=true]:border-gray-500/50 border-b-2 border-transparent duration-200 px-4 2xl:px-0"
   >
     <div class="mx-auto flex h-full items-center justify-start max-w-7xl">
-      <div class="xl:mr-8 lg:mr-4 font-bold text-3xl text-white">
+      <div class="xl:mr-8 md:mr-4 font-bold text-3xl text-white">
         <img src="/logo.png" alt="" />
       </div>
       <nav
-        class="mr-auto text-yellow-500 text-base font-semibold hidden lg:block"
+        class="mr-auto text-yellow-500 text-base font-semibold hidden md:block"
       >
         <ul class="flex items-center gap-3 justify-start">
           <li v-for="(menu, i) in Menus" :key="menu.name">
@@ -146,10 +146,10 @@ onMounted(() => {
       <ul class="flex flex-col items-start gap-6 justify-start">
         <li v-for="menu in Menus" :key="menu.name">
           <NuxtLink
-            active-class="border-white"
+            active-class="border-yellow-500"
             :to="menu.url"
-            class="pr-4 py-1 font-bold duration-300 capitalize border-transparent hover:border-white border-b-4 transition-colors"
-            >/{{ menu.name }}</NuxtLink
+            class="py-2 duration-300 border-b-2 border-transparent hover:border-yellow-500 transition-colors"
+            >{{ menu.name }}</NuxtLink
           >
         </li>
       </ul>

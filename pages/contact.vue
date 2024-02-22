@@ -64,7 +64,7 @@
             <p class="max-w-lg text-gray-500 font-semibold">
               Timezone : <span class="text-white">GMT +5:30</span>
               <br />
-              Email : <span class="text-white">aryabh@ssh.studio</span>
+              Email : <span class="text-white">aryabh[at]ssh[dot]studio</span>
             </p>
           </div>
           <div class="mt-20">

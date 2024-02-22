@@ -8,6 +8,6 @@
   "urlTxt": "Go to SSH.studio",
   "github": "https://github.com/ssh-studio/official-site",
   "languages": ["Javascript", "Typescript"],
-  "frameworks": ["React","Next.js","TailwindCSS"],
+  "frameworks": ["React","Next.js","Tailwind"],
   "tools": ["Typescript", "Airtable","Zapier"]
 }
